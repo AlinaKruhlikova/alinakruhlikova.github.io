@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сайт Мурманска — кейс</title>
+<meta name="description" content="Кейс Алины Кругликовой: концепт-сайт Мурманска, который показывает полярный свет и помогает спланировать поездку под световой день.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='4' width='24' height='24' fill='%237CF2C4' stroke='%23161816' stroke-width='4'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Сайт Мурманска — кейс">
+<meta property="og:description" content="Концепт-сайт, который живёт по полярному свету, и планировщик поездки под световой день.">
+<meta property="og:image" content="https://alinakruhlikova.github.io/img/mur/m01.webp">
+<meta name="theme-color" content="#F8F6F0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+<style>
+/* первый экран: текст и кнопки в одной колонке */
+.top .lead{max-width:var(--measure);text-wrap:pretty}
+.top .cta-row{justify-content:flex-start;align-items:center}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html"><i></i><span>Алина Кругликова</span></a>
+  <a class="back" href="index.html#cases">← Все проекты</a>
+</header>
+
+<main>
+<section class="top">
+  <div class="wrap">
+    <div class="badges"><span class="badge">Кейс 03</span><span class="badge">Цифровой опыт · Сайт</span><span class="badge">Личный проект · опубликован</span></div>
+    <h1>Сайт, который живёт <em>по&nbsp;полярному свету</em></h1>
+    <p class="lead">Туристу на&nbsp;Севере важно одно: сколько будет света и&nbsp;когда ехать за&nbsp;сиянием. Ответы разбросаны по&nbsp;десятку сайтов. Этот сайт показывает свет, а&nbsp;не&nbsp;рассказывает о&nbsp;нём, и&nbsp;собирает поездку под&nbsp;световой&nbsp;день.</p>
+    <div class="cta-row">
+      <a class="btn btn-ink" href="https://alinakruhlikova.github.io/murmansk/" target="_blank" rel="noopener">Посмотреть проект <span>↗</span></a>
+      <a class="btn" href="https://www.behance.net/gallery/256683977/Murmansk-a-website-that-lives-by-polar-light" target="_blank" rel="noopener">Кейс на&nbsp;Behance <span>↗</span></a>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="mono">Роль</span><b>Идея, айдентика, дизайн, сборка сайта</b></div>
+      <div class="fact"><span class="mono">Срок</span><b>6&nbsp;дней, осень 2026</b></div>
+      <div class="fact"><span class="mono">Статус</span><b>Опубликован</b></div>
+      <div class="fact"><span class="mono">Инструменты</span><b>HTML, GSAP, Claude Code, нейросети для&nbsp;кадров</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <figure class="frame-img"><video src="img/mur/sutki-zima.mp4" autoplay muted loop playsinline poster="img/mur/m01.webp" aria-label="Запись экрана: сутки в Мурманске зимой при прокрутке"></video></figure>
+  <figcaption>Сутки зимой за&nbsp;несколько секунд прокрутки: в&nbsp;декабре солнце не&nbsp;поднимается, и&nbsp;сайт весь день остаётся в&nbsp;сумерках.</figcaption>
+</div>
+
+<section class="part">
+  <div class="wrap">
+    <div class="part-head">
+      <div>
+        <div class="label mono"><i></i>01 / Задача</div>
+        <h2>Туристу нужен не&nbsp;город, <em>а&nbsp;свет</em></h2>
+      </div>
+      <p>Я&nbsp;живу в&nbsp;Мурманске, и&nbsp;гости спрашивают меня об&nbsp;одном и&nbsp;том&nbsp;же. Не&nbsp;«что посмотреть»&nbsp;— это есть на&nbsp;любом сайте,&nbsp;— а&nbsp;«когда ехать». Гипотеза: если сайт сразу отвечает на&nbsp;эти вопросы, им&nbsp;пользуются, а&nbsp;не&nbsp;просто листают.</p>
+    </div>
+    <ul class="fixes">
+      <li><b>Сколько будет светло</b> в&nbsp;мои даты&nbsp;— и&nbsp;будет&nbsp;ли вообще</li>
+      <li><b>Когда шанс увидеть сияние</b>, а&nbsp;когда приезжать бессмысленно</li>
+      <li><b>Что я&nbsp;успею</b> за&nbsp;2–7&nbsp;дней: Териберка, киты, Хибины</li>
+    </ul>
+  </div>
+</section>
+
+<section class="part">
+  <div class="wrap">
+    <div class="part-head">
+      <div>
+        <div class="label mono"><i></i>02 / Идея</div>
+        <h2>Сайт показывает свет, <em>а&nbsp;не&nbsp;описывает</em></h2>
+      </div>
+      <p>Полярная ночь&nbsp;— примерно со&nbsp;2&nbsp;декабря по&nbsp;11&nbsp;января, полярный день&nbsp;— с&nbsp;22&nbsp;мая по&nbsp;22&nbsp;июля. Цифры не&nbsp;передают, каково это. Поэтому прокрутка&nbsp;— это сутки, а&nbsp;небо меняется так, как меняется свет за&nbsp;окном в&nbsp;выбранный день.</p>
+    </div>
+    <div class="stack">
+      <figure class="frame-img"><img src="img/mur/m01.webp" alt="Первый экран сайта в 23:38 в июне и в декабре" loading="lazy"></figure>
+      <figcaption>Одно и&nbsp;то&nbsp;же время, 23:38. Слева июнь&nbsp;— солнце не&nbsp;садится. Справа декабрь&nbsp;— ноль часов света и&nbsp;сияние.</figcaption>
+      <figure class="frame-img"><img src="img/mur/m03.webp" alt="Как меняется небо на сайте в течение суток в декабре и в июне" loading="lazy"></figure>
+      <figcaption>Небо считается по&nbsp;настоящей траектории солнца для выбранной даты. Сайт начинает с&nbsp;текущего мурманского времени.</figcaption>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="wrap">
+    <div class="part-head">
+      <div>
+        <div class="label mono"><i></i>03 / Айдентика</div>
+        <h2>Одно правило: <em>горизонт</em></h2>
+      </div>
+      <p>Из&nbsp;двух направлений выбрала «Полярный календарь», а&nbsp;не&nbsp;морскую «Лоцию»: такая идея возможна только в&nbsp;Мурманске. Знак&nbsp;— сопки и&nbsp;путь солнца: что выше линии горизонта, то&nbsp;и&nbsp;свет сегодня.</p>
+    </div>
+    <div class="fit">
+      <figure class="frame-img" style="flex:0.970"><img src="img/mur/m06.webp" alt="Знак «Горизонт» в разных состояниях: полярный день, равноденствие, полярная ночь" loading="lazy"></figure>
+      <figure class="frame-img" style="flex:1.194"><img src="img/mur/m07.webp" alt="Шрифты Tenor Sans, Dela Gothic One, Inter и палитра день, сумерки, ночь" loading="lazy"></figure>
+    </div>
+    <figcaption>Знак живой: дуга солнца рисуется по&nbsp;дате. Три шрифта&nbsp;— три роли, палитра в&nbsp;двух состояниях: день и&nbsp;ночь.</figcaption>
+  </div>
+</section>
+
+<section class="part">
+  <div class="wrap">
+    <div class="part-head">
+      <div>
+        <div class="label mono"><i></i>04 / Три версии</div>
+        <h2>От&nbsp;открытки <em>к&nbsp;инструменту</em></h2>
+      </div>
+      <p>Каждая версия отвечала на&nbsp;вопрос, который не&nbsp;закрыла предыдущая.</p>
+    </div>
+    <div class="no">
+      <div class="no-card"><p class="mono">Версия 1</p><h3>Шаблон</h3><p>Карточки «что посмотреть». Ничем не&nbsp;отличался от&nbsp;любого туристического сайта и&nbsp;не&nbsp;отвечал на&nbsp;главный вопрос&nbsp;— когда ехать.</p></div>
+      <div class="no-card"><p class="mono">Версия 2</p><h3>Живое небо</h3><p>Сайт стал узнаваемым, но&nbsp;его смотрят один раз, как красивую открытку. Свет видно, а&nbsp;сделать с&nbsp;этим знанием нечего.</p></div>
+      <div class="no-card"><p class="mono">Версия 3</p><h3>Инструмент</h3><p>Кольцо года и&nbsp;планировщик отвечают на&nbsp;«когда ехать и&nbsp;что успею». Ради этого на&nbsp;сайт возвращаются.</p></div>
+    </div>
+    <div class="stack">
+      <div class="cols">
+        <figure class="frame-img"><video src="img/mur/ring.mp4" autoplay muted loop playsinline poster="img/mur/m09.webp" aria-label="Запись экрана: кольцо года, выбор даты"></video></figure>
+        <div>
+          <h3>Кольцо года</h3>
+          <p class="muted">365 лучей&nbsp;— 365 дней, длина луча&nbsp;— сколько длится светлое время. Выбираешь день, и&nbsp;весь сайт показывает Мурманск в&nbsp;эту дату. Работает мышкой, касанием и&nbsp;с&nbsp;клавиатуры.</p>
+          <h3>Поездка за&nbsp;минуту</h3>
+          <p class="muted">Цели (сияние, киты, Териберка, Хибины), даты или «подобрать лучшее время», 2–7&nbsp;дней&nbsp;— и&nbsp;маршрут по&nbsp;дням с&nbsp;временем по&nbsp;солнцу. Если цель не&nbsp;подходит к&nbsp;датам, планировщик говорит об&nbsp;этом и&nbsp;объясняет почему. Маршрутом можно поделиться ссылкой.</p>
+        </div>
+      </div>
+      <div class="fit">
+        <figure class="frame-img" style="flex:0.649"><img src="img/mur/m11.webp" alt="Планировщик: цели, даты и маршрут по дням" loading="lazy"></figure>
+        <figure class="frame-img" style="flex:0.730"><img src="img/mur/m12.webp" alt="Маршруты: линия света через Териберку" loading="lazy"></figure>
+      </div>
+      <figcaption>Слева планировщик: каждая цель проверяется по&nbsp;датам&nbsp;— подходит, под вопросом или нет, с&nbsp;пояснением. Справа маршрут: каждая остановка привязана ко&nbsp;времени суток, линия меняет цвет вместе с&nbsp;небом.</figcaption>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="wrap">
+    <div class="part-head">
+      <div>
+        <div class="label mono"><i></i>05 / Разбор</div>
+        <h2>Красота мешала: <em>5&nbsp;из&nbsp;10</em> за&nbsp;удобство</h2>
+      </div>
+      <p>Я&nbsp;попросила Claude Code разобрать сайт как UX-эксперт&nbsp;— глазами коммерческого продукта, а&nbsp;не&nbsp;витрины. Оценка за&nbsp;удобство&nbsp;— 5&nbsp;из&nbsp;10: длинные закреплённые экраны, заставка, мелкая навигация. Это экспертный разбор, а&nbsp;не&nbsp;тест с&nbsp;людьми&nbsp;— он&nbsp;следующий шаг.</p>
+    </div>
+    <ul class="fixes">
+      <li><b>Быстрее к&nbsp;делу.</b> Закреплённый экран «Сутки» стал почти вдвое короче, планировщик поднялся сразу под кольцо года, появилась кнопка «Собрать поездку», заставка сократилась до&nbsp;2&nbsp;секунд и&nbsp;показывается один раз.</li>
+      <li><b>Доступно всем.</b> Управление с&nbsp;клавиатуры, видимый фокус, контраст всех текстов, заголовки для экранного диктора. Выбор даты больше не&nbsp;перебрасывает наверх.</li>
+      <li><b>Можно доверять.</b> Дорога, поезда, сезон китов и&nbsp;правила въезда сверены, у&nbsp;фото указаны авторы, кадры от&nbsp;нейросети подписаны.</li>
+    </ul>
+    <div class="nums">
+      <div class="num"><b>260 → 140&nbsp;%</b><span>длина закреплённого экрана «Сутки»</span></div>
+      <div class="num"><b>14,3 → 4,7&nbsp;МБ</b><span>вес фото</span></div>
+      <div class="num"><b>4 → 3</b><span>шрифта</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="wrap">
+    <div class="part-head">
+      <div>
+        <div class="label mono"><i></i>06 / От&nbsp;чего отказалась</div>
+        <h2>Что вычеркнула <em>и&nbsp;почему</em></h2>
+      </div>
+      <p>Многое было эффектно, но&nbsp;мешало главному&nbsp;— понять свет и&nbsp;спланировать поездку.</p>
+    </div>
+    <div class="no">
+      <div class="no-card"><p class="was">Айдентика «Лоция»</p><h3>Морская карта и&nbsp;флаги</h3><p>Красиво, но&nbsp;подходит любому портовому городу. Флаги остались идеей для пасхалки.</p></div>
+      <div class="no-card"><p class="was">Раскрытие кадра Териберки</p><h3>Эффекты ради эффекта</h3><p>Закрепление и&nbsp;раскрытие удлиняли путь. Убрала вместе с&nbsp;горизонтальной лентой без стрелок.</p></div>
+      <div class="no-card"><p class="was">Коды МУР → TER латиницей</p><h3>Чужие коды аэропортов</h3><p>Латинские сокращения совпадали с&nbsp;настоящими аэропортами. На&nbsp;«талоне» поездки теперь кириллица: МУР → ТЕР.</p></div>
+      <div class="no-card"><p class="was">Узор, нарисованный кодом</p><h3>Абстрактное «кружево»</h3><p>Заменила на&nbsp;узор ягеля&nbsp;— оленьего мха: местный символ вместо абстракции.</p></div>
+      <div class="no-card"><p class="was">Четвёртый шрифт</p><h3>Моноширинный для данных</h3><p>Цифры перешли на&nbsp;Inter с&nbsp;моноширинными цифрами. Три шрифта&nbsp;— три роли.</p></div>
+      <div class="no-card"><p class="was">Номера разделов 01–09</p><h3>Лишняя навигация</h3><p>Сайт читают сверху вниз, номера ничего не&nbsp;давали. Остались заголовки.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="wrap">
+    <div class="part-head">
+      <div>
+        <div class="label mono"><i></i>07 / Телефон</div>
+        <h2>Поездку планируют <em>с&nbsp;телефона</em></h2>
+      </div>
+      <p>Кольцо работает касанием, город листается свайпом, после планировщика появляется плашка «Маршрут готов». Фото&nbsp;— с&nbsp;Unsplash, Wikimedia и&nbsp;от&nbsp;туроператора «Понаехали» с&nbsp;указанием авторов; кадры от&nbsp;нейросети подписаны «ИИ».</p>
+    </div>
+    <div class="stack">
+      <figure class="frame-img"><img src="img/mur/m14.webp" alt="Сайт на телефоне: пять экранов" loading="lazy"></figure>
+      <div class="fit">
+        <figure class="frame-img" style="flex:0.737"><img src="img/mur/m13.webp" alt="Город и ночная сцена с сиянием" loading="lazy"></figure>
+        <figure class="frame-img" style="flex:0.917"><img src="img/mur/m15.webp" alt="Детали: как добраться, что взять, сколько света" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="wrap next">
+    <div>
+      <div class="label mono"><i></i>08 / Вывод</div>
+      <h2>Внимание держит эффект, <em>а&nbsp;остаются ради пользы</em></h2>
+      <p class="lead muted">Сутки на&nbsp;прокрутке привлекают внимание, но&nbsp;без планировщика сайт оставался открыткой. Следующий шаг&nbsp;— проверить гипотезу на&nbsp;людях, которые действительно собираются на&nbsp;Север.</p>
+    </div>
+    <ul class="todo">
+      <li class="done">Идея, айдентика, сайт с&nbsp;живым небом</li>
+      <li class="done">Планировщик поездки, кольцо года, маршруты по&nbsp;свету</li>
+      <li class="done">Экспертный разбор, правки, проверка фактов и&nbsp;прав на&nbsp;фото</li>
+      <li>Опросить 3–5&nbsp;человек, которые планируют поездку на&nbsp;Север</li>
+      <li>Заявка гиду или туроператору прямо из&nbsp;маршрута</li>
+      <li>Карта маршрута и&nbsp;прогноз погоды</li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap end">
+  <h2>Посмотрите, какой свет <em>сейчас</em></h2>
+  <div class="btns">
+    <a class="btn btn-ink" href="https://alinakruhlikova.github.io/murmansk/" target="_blank" rel="noopener">Посмотреть проект <span>↗</span></a>
+    <a class="btn" href="index.html#cases">Все проекты</a>
+  </div>
+</div>
+</main>
+<footer><div class="wrap mono">© 2026 Алина Кругликова · Личный концепт, не&nbsp;официальный сайт города</div></footer>
+<script>if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.querySelectorAll('video').forEach(v=>{v.removeAttribute('autoplay');v.pause()})</script>
+</body>
+</html>
