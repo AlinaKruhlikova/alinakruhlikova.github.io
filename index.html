@@ -755,14 +755,36 @@ const hero = document.getElementById('hero'), cv = document.getElementById('staf
 const wordEl = document.getElementById('word'), letters = [...wordEl.children], hint = document.getElementById('fixHint');
 let W = 0, H = 0, DPR = 1, top0 = 0, gap = 16;
 const mouse = { x: -999, y: -999, sx: -999, sy: -999 };
-// ноты: x (доля ширины), ступень (0 — верхняя линия, 8 — нижняя), тип
-const NOTES = [
-  [.06,6,'f'],[.10,4,'f'],[.14,5,'h'],[.20,3,'f'],[.24,2,'f'],[.29,4,'r'],[.35,1,'f'],[.39,3,'f'],[.43,5,'h'],
-  [.50,7,'f'],[.54,6,'f'],[.58,4,'r'],[.64,2,'h'],[.68,3,'f'],[.76,5,'f'],[.80,4,'f'],[.86,4,'r'],[.90,6,'f'],[.94,8,'h']
+// партитура: 6 тактов строго 4/4. Нота — [ступень (0 — верхняя линия, 8 — нижняя), тип]:
+// f — четверть (1 доля), h — половинная (2), r — половинная пауза (2), w — фальшивая четверть
+const SCORE = [
+  [[6,'f'],[4,'f'],[5,'h']],
+  [[3,'f'],[2,'f'],[4,'r']],
+  [[1,'f'],[3,'f'],[5,'h']],
+  [[7,'f'],[6,'f'],[4,'r']],
+  [[2,'h'],[3,'f'],[0,'w']],
+  [[5,'f'],[4,'f'],[6,'h']]
 ];
-const BARS = [.17, .32, .47, .61, .83, .97];
 const wrong = { x: .72, from: 3.5, to: 4, s: 0, fixed: false }; // фальшивая нота
-const state = NOTES.map(() => ({ dy: 0 }));
+let NOTES = [], BARS = [], firstBar = 1, state = [];
+// раскладка по ширине: на узком экране меньше тактов, а не меньше нот (такт ≈ 190 px, на телефоне 2 такта — 5-й с фальшивой нотой и 6-й).
+// Внутри такта ноты стоят по долям: каждая доля — пятая часть такта, половинная занимает две
+function layoutScore(){
+  const count = Math.max(2, Math.min(6, Math.round(W / 190)));
+  const first = SCORE.length - count, x0 = .02, x1 = .98, mW = (x1 - x0) / count;
+  NOTES = []; BARS = []; firstBar = first + 1;
+  for (let k = 0; k < count; k++){
+    const s = x0 + k * mW; let beat = 0;
+    if (k) BARS.push({ x: s, n: first + k + 1 });
+    SCORE[first + k].forEach(([st, t]) => {
+      const x = s + mW * (.14 + beat * .205);
+      if (t === 'w') wrong.x = x; else NOTES.push([x, st, t]);
+      beat += t === 'f' || t === 'w' ? 1 : 2;
+    });
+  }
+  BARS.push({ x: x1, n: 0 });
+  state = NOTES.map(() => ({ dy: 0 }));
+}
 
 function layoutHero(){
   const r = hero.getBoundingClientRect();
@@ -773,6 +795,7 @@ function layoutHero(){
   // на телефоне шаг стана постоянный (16): от него считается отступ до текста в CSS
   gap = W < 768 ? 16 : Math.max(12, Math.min(20, H * .022));
   top0 = sr.bottom - r.top + gap * 3.9;
+  layoutScore();
 }
 function field(x, y){
   if (reduce) return 0;
@@ -805,10 +828,11 @@ function drawHero(){
   }
   // тактовые черты + номера тактов
   ctx.fillStyle = 'rgba(22,24,22,.5)'; ctx.font = '500 11px JetBrains Mono';
-  BARS.forEach((b, i) => { const x = b*W; ctx.fillRect(x, top0 + field(x, top0), 1, gap*4); ctx.fillText(String(i+2).padStart(2,'0'), x + 6, top0 - 10); });
+  // номер первого такта на стане — у его начала, как в нотах; дальше номер стоит у каждой черты
+  if (firstBar > 1) ctx.fillText(String(firstBar).padStart(2,'0'), .02*W + 6, top0 - 10);
+  BARS.forEach(b => { const x = b.x*W; ctx.fillRect(x, top0 + field(x, top0), 1, gap*4); if (b.n) ctx.fillText(String(b.n).padStart(2,'0'), x + 6, top0 - 10); });
   // ноты
   NOTES.forEach((n, i) => {
-    if (W < 600 && i % 2) return;
     const x = n[0]*W, y0 = noteY(n[1]);
     state[i].dy += (field(x, y0) * 1.4 - state[i].dy) * .2;
     drawNote(x, y0 + state[i].dy, n[2], '#161816');
