@@ -6,7 +6,7 @@
    Текст — 6 колонок. Кадры разной высоты в одном ряду (.fit) подгоняются по пропорции — внутренние края не на колонках, это задумано. ===== */
 :root{
   --paper:#F8F6F0; --paper-2:#E3EFEC; --card:#EEF5F3;
-  --ink:#161816; --muted:#5A625E; --brand:#0E5A55; --brand-2:#0A4744;
+  --ink:#161816; --ink-2:#2B302D; --muted:#5A625E; --brand:#0E5A55; --brand-2:#0A4744;
   --line:#DCE3DF; --line-2:#B9CAC4;
   --accent:#7CF2C4; --accent-text:#0E6A5E; --sun:#F5C84B; --surface-wrong:#FCEFC7; --warn-text:#7A5A00;
   --red-soft:#F8E1DC; --red-text:#9B2C1A;
@@ -30,6 +30,8 @@ figure{margin:0}
 .mono{font:500 12px/1.4 var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
 .muted{color:var(--muted)}
 p,figcaption,li{text-wrap:pretty}
+/* короткие тексты — строками равной длины, без «лесенки» и слова-хвоста на отдельной строке (30.10) */
+figcaption,blockquote,p.lead,.part-head > p,.insight p,.no-card p,.cols p,.fixes li,.step p{text-wrap:balance}
 
 /* сетка */
 .wrap{padding:0 var(--margin);max-width:var(--max);margin:0 auto;width:100%}
@@ -45,9 +47,14 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
 /* типографика */
 .label{color:var(--muted);display:flex;align-items:center;gap:var(--s1);margin-bottom:var(--s2);font-size:12px}
 .label i{display:inline-block;width:8px;height:8px;background:var(--accent)}
-h1{font:800 clamp(40px,6vw,88px)/1 var(--f-head);letter-spacing:-.02em}
-h2{font:600 clamp(28px,3.4vw,48px)/1.1 var(--f-head);letter-spacing:-.01em}
-h2 em,h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--accent) 62%,var(--accent) 92%,transparent 92%)}
+/* заголовки мягкие (30.10, решение Алины): тонкое начертание, чуть светлее чёрного, акцент — тонкая мятная черта, а не плашка */
+/* заголовок страницы — одной строкой на 1440 (52), разделы заметно меньше (40) */
+h1{font:400 clamp(32px,3.6vw,52px)/1.12 var(--f-head);letter-spacing:-.02em;color:var(--ink-2)}
+h2{font:400 clamp(26px,2.8vw,40px)/1.15 var(--f-head);letter-spacing:-.01em}
+h2 em,h1 em{font-style:normal;background:linear-gradient(transparent 82%,var(--accent) 82%,var(--accent) 94%,transparent 94%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* заголовок и подзаголовок одной ширины: ширину задаёт заголовок, подзаголовок её повторяет */
+.hd{display:inline-flex;flex-direction:column;max-width:100%}
+.hd p.lead{width:0;min-width:100%;max-width:none;text-wrap:pretty}
 h3{font:600 20px/1.3 var(--f-head)}
 p.lead{font-size:clamp(19px,1.6vw,22px);line-height:1.5;margin-top:var(--s3);max-width:var(--measure)}
 
@@ -58,7 +65,7 @@ p.lead{font-size:clamp(19px,1.6vw,22px);line-height:1.5;margin-top:var(--s3);max
 .badge.warn{background:var(--surface-wrong);color:var(--warn-text);border-color:transparent}
 .facts{margin-top:var(--s4);row-gap:var(--s3)}
 .fact{grid-column:span var(--quarter);border-top:1.5px solid var(--ink);padding-top:var(--s2)}
-.fact b{display:block;font:600 15px/1.3 var(--f-head);margin-top:var(--s1)}
+.fact b{display:block;font:500 15px/1.3 var(--f-head);margin-top:var(--s1)}
 .fact span{display:block;color:var(--muted)}
 .cta-row{display:flex;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s3)}
 
@@ -68,7 +75,8 @@ p.lead{font-size:clamp(19px,1.6vw,22px);line-height:1.5;margin-top:var(--s3);max
 .frame-img{border-radius:8px;overflow:hidden;border:1px solid var(--line-2);background:#0B1224}
 .frame-img img,.frame-img video{width:100%;display:block}
 /* подпись ближе к своему кадру, чем к следующему (1.1): 8 → 48 */
-figcaption{margin-top:var(--s1);color:var(--muted);font-size:15px;max-width:var(--measure)}
+/* подпись идёт по ширине своего кадра — не дробим короткий текст (30.10) */
+figcaption{margin-top:var(--s1);color:var(--muted);font-size:15px}
 .stack{display:flex;flex-direction:column}
 .stack > * + *{margin-top:var(--s3)}
 .stack > figcaption{margin-top:var(--s1)}
@@ -165,7 +173,7 @@ section.part{padding:var(--sec-pad) 0;border-top:1px solid var(--line)}
 /* финал */
 /* финальный призыв — как на главной: заголовок → 24 → кнопки, по левому краю */
 .end{padding-top:var(--sec-pad);padding-bottom:var(--sec-pad);border-top:1px solid var(--line);row-gap:var(--s3)}
-.end > h2{grid-column:1 / span var(--half)}
+.end > h2{grid-column:1 / -1}
 .end > .btns{grid-column:1 / -1;justify-content:flex-start}
 .btn{display:inline-flex;align-items:center;gap:var(--s1);font:600 16px/1 var(--f-text);text-decoration:none;padding:var(--s2) var(--s3);border-radius:4px;border:1.5px solid var(--ink);transition:transform .2s var(--ease), box-shadow .2s var(--ease)}
 .btn-ink{background:var(--brand);border-color:var(--brand);color:#fff}
@@ -190,6 +198,8 @@ footer{padding:var(--s3) 0 var(--s4);color:var(--muted);border-top:1px solid var
   .fit{flex-direction:column}
   .end > .btns{justify-content:flex-start}
   .logo span{display:none}
+  /* названия карточек на телефоне — в одну строку */
+  .no-card h3{font-size:17px}
 }
 @media (hover:none){ .btn:hover{transform:none;box-shadow:none} }
 @media (prefers-reduced-motion: reduce){ *{transition:none !important;animation:none !important} }

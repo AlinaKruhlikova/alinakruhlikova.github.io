@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Севея — проект в работе</title>
+<meta name="description" content="Проект Алины Кругликовой в работе: сайт бренда ухода за кожей с ИИ-консультантом Таей. Главная и дизайн-система сайта.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='4' width='24' height='24' fill='%237CF2C4' stroke='%23161816' stroke-width='4'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Севея — уход, который ведёт ИИ-консультант">
+<meta property="og:description" content="Проект в работе: главная и дизайн-система сайта бренда ухода за кожей.">
+<meta property="og:image" content="https://alinakruhlikova.github.io/img/sev/hero.webp">
+<meta name="theme-color" content="#F8F6F0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;800&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+<style>
+/* Страница «в работе». Сетка, шкала и заголовки — как у остальных кейсов (case.css).
+   Кадры — светлые снимки, поэтому рамка тонкая и без тени: они лежат на той же бумаге.
+   Факты, подписи и тексты в шапках разделов — в одну строку на компьютере. */
+.sev{border:1px solid var(--line-2);border-radius:8px;overflow:hidden;background:#fff}
+.sev img{width:100%;height:auto}
+@media (max-width:767px){
+  /* на телефоне кадры палитры и кнопок — друг под другом во всю ширину */
+  .fit > figure{width:100%;flex:none !important}
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html"><i></i><span>Алина Кругликова</span></a>
+  <a class="back" href="index.html#cases">← Все проекты</a>
+</header>
+
+<main>
+<section class="top">
+  <div class="wrap">
+    <div class="hd">
+      <h1>Севея: уход, который <em>ведёт&nbsp;Тая</em></h1>
+      <p class="lead">Концепт северного бренда ухода за&nbsp;кожей. ИИ&#8209;консультант Тая советует одно средство под сезон, собирает план из&nbsp;того, что уже есть дома, и&nbsp;меняет его вместе с&nbsp;сезоном.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="mono">Готово</span><b>Главная, дизайн&#8209;система</b></div>
+      <div class="fact"><span class="mono">Роль</span><b>Всё сама: сценарии, UI</b></div>
+      <div class="fact"><span class="mono">Главное</span><b>ИИ&#8209;консультант в&nbsp;магазине</b></div>
+      <div class="fact"><span class="mono">Инструменты</span><b>Figma, HTML, Claude Code</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap shot-cap">
+  <figure class="sev"><img src="img/sev/hero.webp" alt="Первый экран главной «Севеи»: заголовок «Север меняется. Твой уход — тоже», средство сезона и вход к Тае" width="1600" height="1000"></figure>
+  <figcaption>Первый экран меняется вместе с&nbsp;сезоном: фон, средство сезона и&nbsp;совет Таи. Переключатель сезонов&nbsp;— в&nbsp;шапке.</figcaption>
+</div>
+
+<section class="part" style="border-top:0">
+  <div class="wrap">
+    <div class="part-head">
+      <div>
+        <div class="label mono"><i></i>01 / Главная</div>
+        <h2>Уход на&nbsp;<em>весь&nbsp;год</em></h2>
+      </div>
+      <p>Кабинет&nbsp;— без покупки: Тая соберёт план из&nbsp;того, что уже есть дома.</p>
+    </div>
+    <div class="pair shot-cap">
+      <figure><div class="sev"><img src="img/sev/year.webp" alt="Блок кабинета: веер экранов «Полка», «Мой план», «Мой год»" width="1600" height="1000" loading="lazy"></div><figcaption>Кабинет: при прокрутке веер раскрывается, экраны поднимаются по&nbsp;очереди.</figcaption></figure>
+      <figure><div class="sev"><img src="img/sev/taya.webp" alt="Блок «Спроси Таю о своей коже»: портрет Таи и два примера диалога" width="1600" height="1000" loading="lazy"></div><figcaption>Тая: два сценария и&nbsp;поле для своего вопроса. Скажет, если покупать не&nbsp;нужно.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="wrap">
+    <div class="part-head">
+      <div>
+        <div class="label mono"><i></i>02 / Дизайн&#8209;система</div>
+        <h2>Сезоны на&nbsp;<em>токенах</em></h2>
+      </div>
+      <p>Все цвета&nbsp;— переменные Figma: сменился сезон, перекрасился весь сайт.</p>
+    </div>
+    <div class="fit shot-cap">
+      <figure style="flex:0.981"><div class="sev"><img src="img/sev/ds-color.webp" alt="Цвета: коллекция «Сезон» в четырёх режимах и коллекция «База»" width="1248" height="1272" loading="lazy"></div><figcaption>Цвет: роли, а&nbsp;не&nbsp;оттенки.</figcaption></figure>
+      <figure style="flex:1.5"><div class="sev"><img src="img/sev/ds-buttons.webp" alt="Кнопки: пять состояний, кнопка Таи и текстовая ссылка" width="1248" height="832" loading="lazy"></div><figcaption>Кнопки в&nbsp;пяти состояниях. В&nbsp;Figma ещё шрифты, сетка и&nbsp;все поля ввода.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="part">
+  <div class="wrap next">
+    <div>
+      <div class="label mono"><i></i>03 / Что дальше</div>
+      <h2>Проект <em>в&nbsp;работе</em></h2>
+      <p class="lead">Полный кейс появится, когда будут готовы основные страницы.</p>
+    </div>
+    <ul class="todo">
+      <li class="done">Знак, упаковка, характер Таи</li>
+      <li class="done">Главная и&nbsp;дизайн&#8209;система сайта</li>
+      <li>Каталог и&nbsp;карточка средства</li>
+      <li>Чат Таи и&nbsp;кабинет</li>
+      <li>Телефон: сначала макет в&nbsp;Figma, потом вёрстка</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<div class="wrap end">
+  <h2>Покажу макеты <em>в&nbsp;Figma</em></h2>
+  <div class="btns"><a class="btn btn-ink" href="index.html#outro">Написать мне <span>→</span></a><a class="btn" href="index.html#cases">Все проекты</a></div>
+</div>
+<footer><div class="wrap mono">© 2026 Алина Кругликова · Личный концепт: бренд и&nbsp;средства придуманы для проекта</div></footer>
+
+</body>
+</html>
